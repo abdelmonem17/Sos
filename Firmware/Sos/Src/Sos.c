@@ -24,7 +24,7 @@ typedef struct
 {
 	
 	uint32					next_Excution_Time;
-	EnmTMUPeriodicity_t		shots;
+	EnmTMUPeriodicity_t		        shots;
 	Sos_Task_t				task;
 	uint16 *				id_address;
 	uint16					priodicity;
@@ -51,11 +51,11 @@ volatile uint8 gu8_TickFlag;
 *   @return void
 ****************************************************************************/
 
-//volatile static flag=0;
+
 static void Sos_CallTimerBack(void)
 {
 	 
-	// flag=1;
+	
 	  /*	weak the processor up	*/	    
 		
 }
@@ -232,15 +232,15 @@ void Sos_Run(void)
 	while (1)
 	{
 				
-				if (gu16_Sos_Ticks > (uint16)(gu16_Sos_Ticks + 1)  )
-				{
-					au8_Sos_TicksOverflowFlag = TRUE;
-					gu16_Sos_Ticks = 0;
-				}
-				else
-				{
-					gu16_Sos_Ticks++;
-				}
+			if (gu16_Sos_Ticks > (uint16)(gu16_Sos_Ticks + 1)  )
+			{
+				au8_Sos_TicksOverflowFlag = TRUE;
+				gu16_Sos_Ticks = 0;
+			}
+			else
+			{
+				gu16_Sos_Ticks++;
+			}
 			
 			/*	check in task repo for the highest priority task  */
 			for (uint16 au8_TaskIndex=0 ; au8_TaskIndex < gu16_TaskRepoSize ; au8_TaskIndex++ )
@@ -345,7 +345,7 @@ void Sos_Dinit (void )
 	timer_cfg.counter_us=NUMBER_ZERO;
 	
 	
-	/*		clear job rep			*/
+	/*		clear task rep			*/
 	gu16_TaskRepoSize=NUMBER_ZERO;
 	
 }
