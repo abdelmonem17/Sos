@@ -1,5 +1,5 @@
 /****************************************************************************
- * @file  Sos.h
+ * @file  Sos.c
  * @brief this file includes some functions implementation of OS
  *
  * @author Abdelmonem Mostafa
